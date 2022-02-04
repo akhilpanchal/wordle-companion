@@ -1,26 +1,30 @@
 import React from "react";
 import model from "./model.json";
+import { toast } from "react-toastify";
 
 export const WordleContext = React.createContext();
 
-export const BASE_MAP = {
-  exact: 2,
-  close: 1,
-  miss: 0
-};
-
 export const WordleContextProvider = ({ children }) => {
-  const [currentWord, setCurrentWord] = React.useState(model);
-  const [guessWords, setGuessWords] = React.useState([currentWord.word]);
-  const [hints, setHints] = React.useState([
+  const initialHintsState = [
     [0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0]
-  ]);
-
+  ];
+  const [currentWord, setCurrentWord] = React.useState(model);
+  const [guessWords, setGuessWords] = React.useState([currentWord.word]);
+  const [hints, setHints] = React.useState(initialHintsState);
   const [guessCount, setGuessCount] = React.useState(0);
+  const [gameState, setGameState] = React.useState("IN_PROGRESS");
+
+  const resetGame = React.useCallback(() => {
+    setCurrentWord(model);
+    setGuessWords([currentWord.word]);
+    setHints(initialHintsState);
+    setGuessCount(0);
+    setGameState("IN_PROGRESS");
+  }, []);
 
   const getNextGuess = React.useCallback(() => {
     const hintBase3 = hints[guessCount]
@@ -30,8 +34,16 @@ export const WordleContextProvider = ({ children }) => {
 
     const moveBucket = currentWord.bucketToMove[hintDecimal];
 
-    if (!moveBucket || hintDecimal === 242) {
-      console.log("exit");
+    if (hintDecimal === 242) {
+      setGameState("SUCCESS");
+      toast.success("Wow! That was easy! 🎉", {
+        position: toast.POSITION.TOP_CENTER
+      });
+    } else if (!moveBucket) {
+      setGameState("ERROR");
+      toast.error("Word is not in the Dictionary! 🚑", {
+        position: toast.POSITION.TOP_CENTER
+      });
       return;
     } else {
       setCurrentWord(currentWord.bucketToMove[hintDecimal]);
@@ -49,7 +61,9 @@ export const WordleContextProvider = ({ children }) => {
         setGuessWords,
         hints,
         setHints,
-        getNextGuess
+        getNextGuess,
+        gameState,
+        resetGame
       }}
     >
       {children}
