@@ -17,9 +17,9 @@ export const Board = () => {
             return <Row row={row} key={word} word={word} />;
           })}
           {gameState === "IN_PROGRESS" ? (
-            <button onClick={getNextGuess}>Go!</button>
+            <button className="action-button" onClick={getNextGuess}>✈️ GO</button>
           ) : (
-            <button onClick={resetGame}>Reset!</button>
+            <button className="action-button" onClick={resetGame}>⎌ Reset</button>
           )}
         </div>
       </div>

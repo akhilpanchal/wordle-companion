@@ -1,7 +1,7 @@
 {
   "name": "react",
   "version": "1.0.0",
-  "homepage": "https://akhilpanchal.github.io/wordle-genie/",
+  "homepage": "https://akhilpanchal.github.io/wordle-genie-ui/",
   "description": "A Wordle Solver that gives you the next word to play",
   "keywords": [
     "react",
