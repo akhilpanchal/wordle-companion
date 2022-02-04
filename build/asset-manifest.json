@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/wordle-genie/static/css/main.2d7da54d.chunk.css",
+    "main.js": "/wordle-genie/static/js/main.7f7a2cc3.chunk.js",
+    "main.js.map": "/wordle-genie/static/js/main.7f7a2cc3.chunk.js.map",
+    "runtime-main.js": "/wordle-genie/static/js/runtime-main.fb281766.js",
+    "runtime-main.js.map": "/wordle-genie/static/js/runtime-main.fb281766.js.map",
+    "static/css/2.70727bab.chunk.css": "/wordle-genie/static/css/2.70727bab.chunk.css",
+    "static/js/2.64496d23.chunk.js": "/wordle-genie/static/js/2.64496d23.chunk.js",
+    "static/js/2.64496d23.chunk.js.map": "/wordle-genie/static/js/2.64496d23.chunk.js.map",
+    "index.html": "/wordle-genie/index.html",
+    "static/css/2.70727bab.chunk.css.map": "/wordle-genie/static/css/2.70727bab.chunk.css.map",
+    "static/css/main.2d7da54d.chunk.css.map": "/wordle-genie/static/css/main.2d7da54d.chunk.css.map",
+    "static/js/2.64496d23.chunk.js.LICENSE.txt": "/wordle-genie/static/js/2.64496d23.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fb281766.js",
+    "static/css/2.70727bab.chunk.css",
+    "static/js/2.64496d23.chunk.js",
+    "static/css/main.2d7da54d.chunk.css",
+    "static/js/main.7f7a2cc3.chunk.js"
+  ]
+}
