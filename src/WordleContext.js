@@ -10,7 +10,8 @@ export const WordleContextProvider = ({ children }) => {
     [0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],    
   ];
   const [currentWord, setCurrentWord] = React.useState(model);
   const [guessWords, setGuessWords] = React.useState([currentWord.word]);

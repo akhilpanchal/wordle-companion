@@ -18,7 +18,11 @@ export default function App() {
         </WordleContextProvider>
       </div>
       <footer className="footer">
-        <div>Built with 💙 by&nbsp;<a href="https://github.com/akhilpanchal">@akhilpanchal</a>&nbsp;and <a href="https://github.com/infinitymittal">@infinitymittal</a>.&nbsp;</div>
+        <div>
+          Built with 💙 by&nbsp;
+          <a href="https://github.com/akhilpanchal">Akhil Panchal</a>&nbsp;and&nbsp;
+          <a href="https://github.com/infinitymittal">Anant Mittal</a>.&nbsp;
+        </div>
         <br />
       </footer>
     </>
